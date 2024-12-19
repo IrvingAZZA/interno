@@ -4,6 +4,8 @@
  */
 package pruebamysql;
 
+import java.time.Clock;
+
 /**
  *
  * @author sistemas03
@@ -15,6 +17,7 @@ public class PruebaMysql {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.print("esto e suna prueba");
     }
     
 }
