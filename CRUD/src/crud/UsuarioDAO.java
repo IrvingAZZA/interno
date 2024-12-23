@@ -33,7 +33,7 @@ public class UsuarioDAO {
     // MOSTRAR
     public List<String> Mostrar_Tabla()
     {
-        String query = "SELECT * FROM list_of_universities";
+        String query = "SELECT * FROM `list_of_universities`";
         List<String> usuarios = new ArrayList<>();
         try 
            (Connection conecion = conexion.getConnection();

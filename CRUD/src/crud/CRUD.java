@@ -22,13 +22,13 @@ public class CRUD {
         
         int opcion;
         do {            
-            System.out.println("\n--- Menú CRUD ---");
+            System.out.println("\n--- Menu CRUD ---");
             System.out.println("1. Agregar usuario");
             System.out.println("2. Ver usuarios");
             System.out.println("3. Actualizar usuario");
             System.out.println("4. Eliminar usuario");
             System.out.println("5. Salir");
-            System.out.print("Elige una opción: ");
+            System.out.print("Elige una opcion: ");
             opcion = scanner.nextInt();
             scanner.nextLine();
             
@@ -62,13 +62,42 @@ public class CRUD {
                     }
                     break;
                 case 3:
-                    System.out.println("el ID a actualizar es: ");
-                    String idactualizar = scanner.nextLine();
+                    System.out.print("el ID a actualizar es: ");
+                    String new_id = scanner.nextLine();
+                    scanner.nextLine();
                     
+                    System.out.println("El nombre es: ");
+                    String name = scanner.nextLine();
+                    
+                    System.out.println("La ciudad es: ");
+                    String country = scanner.nextLine();
+                    
+                    System.out.println("El codigo es: ");
+                    String new_code = scanner.nextLine();
+                    
+                    System.out.println("La pagina es: ");
+                    String new_web = scanner.nextLine();
+                    
+                    if (usuariodao.actualizar_lista(new_id, name, country, new_code, new_web))
+                    {
+                    System.out.println("Usuario Actualizado correctamente.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("ID DEL USUARIO A ELIMINAR: ");
+                    String idEliminar = scanner.nextLine();
+                    if(usuariodao.Eliminar_registro(idEliminar))
+                    {
+                        System.out.println("USUARIO ELIMINADO CORRECTAMENTE ");
+                    }
+                case 5:
+                    System.out.println("SALIENDO....");
+                    break;
                 default:
-                    throw new AssertionError();
+                    System.err.println("opcion no valida");
             }
-        } while (true);
+        } while (opcion != 5);
+        scanner.close();
     }
     
 }
