@@ -27,15 +27,14 @@ public class CRUD {
             System.out.println("2. Ver usuarios");
             System.out.println("3. Actualizar usuario");
             System.out.println("4. Eliminar usuario");
-            System.out.println("5. Salir");
+            System.out.println("5. Buscar por usuario");
+            System.out.println("6. Salir");
             System.out.print("Elige una opcion: ");
             opcion = scanner.nextInt();
             scanner.nextLine();
             
             switch (opcion) {
                 case 1:
-                    System.out.print("ID: ");
-                    String id = scanner.nextLine();
                     System.out.print("NOMBRE: ");
                     String nombre = scanner.nextLine();
                     System.out.print("country: ");
@@ -45,7 +44,7 @@ public class CRUD {
                     System.out.print("WEB: ");
                     String web = scanner.nextLine();
                     
-                    if (usuariodao.agregarLinea(id,nombre,countr,code,web)) 
+                    if (usuariodao.agregarLinea( nombre,countr,code,web)) 
                     {
                         System.out.println("INGRESADO CORRECTAMENTE ");
                     }
@@ -63,7 +62,7 @@ public class CRUD {
                     break;
                 case 3:
                     System.out.print("el ID a actualizar es: ");
-                    String new_id = scanner.nextLine();
+                    int new_id = scanner.nextInt();
                     scanner.nextLine();
                     
                     System.out.println("El nombre es: ");
@@ -91,12 +90,17 @@ public class CRUD {
                         System.out.println("USUARIO ELIMINADO CORRECTAMENTE ");
                     }
                 case 5:
+                    System.out.println("Buscar por ID: ");
+                    int idBuscar = scanner.nextInt();
+                    System.out.println(usuariodao.buscarUser(idBuscar));
+                    break;
+                case 6:
                     System.out.println("SALIENDO....");
                     break;
                 default:
                     System.err.println("opcion no valida");
             }
-        } while (opcion != 5);
+        } while (opcion != 6);
         scanner.close();
     }
     
