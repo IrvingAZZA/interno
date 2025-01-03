@@ -1,0 +1,5 @@
+com\ejemplo\spring\crud\UsuarioRepository.class
+com\ejemplo\spring\crud\UsuarioService.class
+com\ejemplo\spring\crud\Usuario.class
+com\ejemplo\spring\crud\SpringCrud.class
+com\ejemplo\spring\crud\UsuarioController.class
